@@ -1,29 +1,61 @@
 /**
  * OOPSBannerApp
- * UC5: Render OOPS as Banner using Inline Array Initialization
+ * UC6: Render OOPS using Static Helper Methods
  * 
  * @author Laasya
- * @version 5.0
+ * @version 6.0
  */
 
 public class OOPSBannerApp {
 
+    // Pattern for letter O
+    public static String[] getOPattern() {
+        return new String[]{
+            "  ***  ",
+            " *   * ",
+            "*     *",
+            "*     *",
+            "*     *",
+            " *   * ",
+            "  ***  "
+        };
+    }
+
+    // Pattern for letter P
+    public static String[] getPPattern() {
+        return new String[]{
+            "***** ",
+            "*   * ",
+            "*   * ",
+            "***** ",
+            "*     ",
+            "*     ",
+            "*     "
+        };
+    }
+
+    // Pattern for letter S
+    public static String[] getSPattern() {
+        return new String[]{
+            " ***** ",
+            "*      ",
+            "*      ",
+            " ***** ",
+            "      *",
+            "      *",
+            " ***** "
+        };
+    }
+
     public static void main(String[] args) {
 
-        // Declare AND initialize array in one step
-        String[] lines = {
-            String.join(" ", " ********  ", " ******** ", " ******  ", " ******** "),
-            String.join(" ", "*        * ", "*        * ", "*      * ", "*        "),
-            String.join(" ", "*        * ", "*        * ", "*      * ", "*        "),
-            String.join(" ", "*        * ", "*        * ", "*******  ", "******** "),
-            String.join(" ", "*        * ", "*        * ", "*        ", "       * "),
-            String.join(" ", "*        * ", "*        * ", "*       ", "        * "),
-            String.join(" ", " ******** ", "  ******** ", " *       ", " ******** ")
-        };
+        String[] o = getOPattern();
+        String[] p = getPPattern();
+        String[] s = getSPattern();
 
-        // Loop through array
-        for (String line : lines) {
-            System.out.println(line);
+        // Print OOPS banner
+        for (int i = 0; i < o.length; i++) {
+            System.out.println(o[i] + " " + o[i] + " " + p[i] + " " + s[i]);
         }
     }
 }
